@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.playpowerpolitics/powerplayers",
+  "name": "io.github.Playpowerpolitics/powerplayers",
   "title": "Power Players",
   "description": "Citizen ratings of US officials and candidates, plus ballots, contact tools and donor-profile prep.",
   "version": "1.0.0",
