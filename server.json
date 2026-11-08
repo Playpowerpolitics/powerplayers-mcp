@@ -1,0 +1,75 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.playpowerpolitics/powerplayers",
+  "title": "Power Players",
+  "description": "Citizen ratings of US officials and candidates, plus ballots, contact tools and donor-profile prep.",
+  "version": "1.0.0",
+  "websiteUrl": "https://powerplayers.app/connect-ai",
+  "repository": {
+    "url": "https://github.com/Playpowerpolitics/powerplayers-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://powerplayers.app/mcp/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    },
+    {
+      "src": "https://powerplayers.app/mcp/icon-400.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "400x400"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://powerplayers.app/api/mcp/v1"
+    },
+    {
+      "type": "streamable-http",
+      "url": "https://powerplayers.app/api/mcp/account"
+    },
+    {
+      "type": "streamable-http",
+      "url": "https://powerplayers.app/api/mcp/office"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "connectors": [
+        {
+          "url": "https://powerplayers.app/api/mcp/v1",
+          "name": "Public civic data",
+          "auth": "none",
+          "access": "read-only",
+          "tools": 10
+        },
+        {
+          "url": "https://powerplayers.app/api/mcp/account",
+          "name": "Your account",
+          "auth": "OAuth 2.1 via Clerk (PKCE S256, dynamic client registration); the user signs in with their Power Players account and approves scopes",
+          "protectedResourceMetadata": "https://powerplayers.app/.well-known/oauth-protected-resource/api/mcp/account",
+          "access": "read and write; every write is previewed and needs the user's confirmation",
+          "tools": 37
+        },
+        {
+          "url": "https://powerplayers.app/api/mcp/office",
+          "name": "Power Players for Offices",
+          "auth": "OAuth 2.1 via Clerk, same sign-in; only for officials, campaign managers and staff their office granted access",
+          "protectedResourceMetadata": "https://powerplayers.app/.well-known/oauth-protected-resource/api/mcp/office",
+          "access": "read and write within the permissions the office granted; writes are previewed and confirmed",
+          "tools": 26
+        }
+      ],
+      "privacyPolicy": "https://powerplayers.app/privacy",
+      "termsOfService": "https://powerplayers.app/terms",
+      "support": "support@powerplayers.app",
+      "discovery": "https://powerplayers.app/.well-known/mcp.json"
+    }
+  }
+}
