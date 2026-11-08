@@ -1,0 +1,15 @@
+{
+  "name": "powerplayers",
+  "displayName": "Power Players",
+  "version": "1.0.0",
+  "description": "Citizen ratings of US officials and candidates, rating trends, side-by-side comparisons and official voter-registration links. An optional signed-in connector rates people, keeps your ballot, emails officials and prepares campaign donations, with a preview and your confirmation before every action.",
+  "author": {
+    "name": "Power Players LLC",
+    "email": "luke@powerplayers.app"
+  },
+  "homepage": "https://powerplayers.app/connect-ai",
+  "repository": "https://github.com/Playpowerpolitics/powerplayers-mcp",
+  "license": "MIT",
+  "keywords": ["mcp", "civic", "politics", "elections", "officials", "ratings", "voting", "government"],
+  "logo": "assets/logo.png"
+}

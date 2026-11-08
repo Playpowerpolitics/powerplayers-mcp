@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "powerplayers": {
+      "url": "https://powerplayers.app/api/mcp/v1"
+    },
+    "powerplayers-account": {
+      "url": "https://powerplayers.app/api/mcp/account"
+    }
+  }
+}

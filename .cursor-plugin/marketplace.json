@@ -1,0 +1,18 @@
+{
+  "name": "powerplayers",
+  "owner": {
+    "name": "Power Players LLC",
+    "email": "luke@powerplayers.app"
+  },
+  "metadata": {
+    "description": "Power Players MCP connectors for Cursor",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "powerplayers",
+      "source": "./plugins/powerplayers",
+      "description": "Citizen ratings of US officials and candidates, trends, comparisons and voter-registration links, plus an optional signed-in connector for your Power Players account."
+    }
+  ]
+}
