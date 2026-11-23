@@ -10,7 +10,7 @@ All three use Streamable HTTP.
 
 | Connector | URL | Sign-in | What it does |
 |---|---|---|---|
-| Public civic data | `https://powerplayers.app/api/mcp/v1` | None | Ten read-only tools: search people, citizen ratings, trends, comparisons, voter-registration links, quote, embed and share helpers. |
+| Public civic data | `https://powerplayers.app/api/mcp/v1` | None | Read-only tools: find the officials for a ZIP or street address, list officials by place or office, search people, citizen ratings, trends, comparisons, reviews, races and election dates, FEC campaign money, forum threads, petitions and polls, voter-registration links, press, embed and share helpers. |
 | Your account | `https://powerplayers.app/api/mcp/account` | OAuth 2.1 (Clerk, PKCE, dynamic client registration) | Acts for a signed-in user: rate people, manage a ballot, email officials, Power stakes and boosts, donor-profile prep. Every write shows a preview and waits for the user's confirmation. |
 | Power Players for Offices | `https://powerplayers.app/api/mcp/office` | OAuth 2.1, same sign-in | For officials, campaign managers and staff their office granted access: constituent sentiment, review replies, updates, town halls, AMA answers, staff access. |
 
