@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.Playpowerpolitics/powerplayers",
   "title": "Power Players",
-  "description": "Citizen ratings of US officials and candidates, plus ballots, contact tools and donor-profile prep.",
-  "version": "1.0.0",
+  "description": "Citizen ratings of US officials and candidates, plus ballots, contact tools and donation prep.",
+  "version": "1.15.0",
   "websiteUrl": "https://powerplayers.app/connect-ai",
   "repository": {
     "url": "https://github.com/Playpowerpolitics/powerplayers-mcp",
@@ -47,7 +47,7 @@
           "name": "Public civic data",
           "auth": "none",
           "access": "read-only",
-          "tools": 10
+          "tools": 36
         },
         {
           "url": "https://powerplayers.app/api/mcp/account",
@@ -55,7 +55,7 @@
           "auth": "OAuth 2.1 via Clerk (PKCE S256, dynamic client registration); the user signs in with their Power Players account and approves scopes",
           "protectedResourceMetadata": "https://powerplayers.app/.well-known/oauth-protected-resource/api/mcp/account",
           "access": "read and write; every write is previewed and needs the user's confirmation",
-          "tools": 37
+          "tools": 90
         },
         {
           "url": "https://powerplayers.app/api/mcp/office",
@@ -63,13 +63,160 @@
           "auth": "OAuth 2.1 via Clerk, same sign-in; only for officials, campaign managers and staff their office granted access",
           "protectedResourceMetadata": "https://powerplayers.app/.well-known/oauth-protected-resource/api/mcp/office",
           "access": "read and write within the permissions the office granted; writes are previewed and confirmed",
-          "tools": 26
+          "tools": 54
         }
       ],
       "privacyPolicy": "https://powerplayers.app/privacy",
       "termsOfService": "https://powerplayers.app/terms",
       "support": "support@powerplayers.app",
-      "discovery": "https://powerplayers.app/.well-known/mcp.json"
+      "discovery": "https://powerplayers.app/.well-known/mcp.json",
+      "liveCapabilities": {
+        "asOf": "2026-11-21",
+        "note": "Switchable capabilities; get_my_account reports the live state at call time.",
+        "capabilities": [
+          {
+            "id": "email",
+            "label": "Email an official",
+            "connector": "account",
+            "state": "on",
+            "tools": [
+              "send_email_to_official"
+            ]
+          },
+          {
+            "id": "wagers",
+            "label": "Stake Power on races",
+            "connector": "account",
+            "state": "on",
+            "tools": [
+              "stake_on_race"
+            ]
+          },
+          {
+            "id": "boosts",
+            "label": "Buy boosts",
+            "connector": "account",
+            "state": "on",
+            "tools": [
+              "buy_boost"
+            ]
+          },
+          {
+            "id": "donor",
+            "label": "Donor profile prep",
+            "connector": "account",
+            "state": "on",
+            "tools": [
+              "get_my_donor_profile_status",
+              "prepare_my_donor_profile"
+            ]
+          },
+          {
+            "id": "donations",
+            "label": "Prepare donations",
+            "connector": "account",
+            "state": "off",
+            "tools": [
+              "prepare_donation",
+              "get_my_donation_status"
+            ]
+          },
+          {
+            "id": "power_purchase",
+            "label": "Buy Power",
+            "connector": "account",
+            "state": "on",
+            "tools": [
+              "start_power_purchase",
+              "get_power_purchase_status"
+            ]
+          },
+          {
+            "id": "power_u",
+            "label": "Power University nominations",
+            "connector": "account",
+            "state": "on",
+            "tools": [
+              "nominate_for_power_u",
+              "get_my_power_u_status",
+              "get_my_power_u_path"
+            ]
+          },
+          {
+            "id": "follow",
+            "label": "Follow people",
+            "connector": "account",
+            "state": "off",
+            "tools": [
+              "follow_person",
+              "unfollow_person",
+              "list_my_follows"
+            ]
+          },
+          {
+            "id": "messages",
+            "label": "Direct messages",
+            "connector": "account",
+            "state": "on",
+            "tools": [
+              "send_direct_message",
+              "list_my_conversations",
+              "read_conversation",
+              "find_member",
+              "list_my_backers",
+              "post_backer_update"
+            ]
+          },
+          {
+            "id": "submissions",
+            "label": "Profile suggestions",
+            "connector": "account",
+            "state": "on",
+            "tools": [
+              "suggest_profile_info",
+              "list_my_submissions"
+            ]
+          },
+          {
+            "id": "access_keys",
+            "label": "Sign in with a Power Players access key (ppk_)",
+            "connector": "account",
+            "state": "on",
+            "tools": []
+          },
+          {
+            "id": "office_tools",
+            "label": "Office connector (read)",
+            "connector": "office",
+            "state": "on",
+            "tools": [
+              "get_my_offices",
+              "get_constituent_sentiment",
+              "get_rating_trends_vs_peers",
+              "list_rating_comments",
+              "get_feedback_briefing",
+              "list_team"
+            ]
+          },
+          {
+            "id": "office_writes",
+            "label": "Office connector (writes)",
+            "connector": "office",
+            "state": "on",
+            "tools": [
+              "reply_to_review",
+              "post_update",
+              "create_town_hall",
+              "update_town_hall",
+              "answer_ama_question",
+              "grant_staff_access",
+              "update_staff_permissions",
+              "revoke_staff_access",
+              "update_office_profile"
+            ]
+          }
+        ]
+      }
     }
   }
 }
